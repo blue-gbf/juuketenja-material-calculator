@@ -961,7 +961,7 @@ materials.forEach(material => {
 </div>
     <h2>${name}</h2>
 <img
-  src="images/PNG変換済み/${name}.png"
+  src="${k}.png"
   style="width:220px;height:126px;border-radius:8px;"
 >
 
@@ -1077,7 +1077,7 @@ function calc(name){
       result.push(`
         <li style="margin-bottom:12px;list-style:none;">
           <div onclick="toggleFarm('${id}')" style="display:flex;align-items:center;cursor:pointer;">
-            <img src="images/PNG変換済み/${k}.png" style="width:56px;height:32px;margin-right:8px;">
+            <img src="${k}.png" style="width:56px;height:32px;margin-right:8px;">
             <span>${k} ×${val}</span>
           </div>
           <div id="${id}" style="display:none;margin-left:64px;margin-top:6px;padding:8px;background:#f5f5f5;border-radius:6px;">
