@@ -1053,10 +1053,10 @@ function calc(name){
     let val = need[k];
     val -= owned[k] || 0;
 
-    if(val > 0){
+        if(val > 0){
       const farm = farmMap[name]?.[k];
       let detail = "";
-      const id = "farm_" + encodeURIComponent(k.replace(/ /g, '_'));
+      const id = "farm_" + counter++;   // 連番にする（確実）
 
       if(farm){
         detail = `<b>おすすめ周回</b><br>`;
@@ -1086,7 +1086,6 @@ function calc(name){
         </li>
       `);
     }
-  }
 
   document.getElementById("result").innerHTML =
     result.length ? `<ul>${result.join("")}</ul>` : "不足なし";
