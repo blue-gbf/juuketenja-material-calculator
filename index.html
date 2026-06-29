@@ -1056,10 +1056,7 @@ function calc(name){
     if(val > 0){
       const farm = farmMap[name]?.[k];
       let detail = "";
-      const id = "farm_" + k
-        .replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g, '_')  // 日本語も許可
-        .replace(/_+/g, '_')
-        .replace(/^_|_$/g, '');
+      const id = "farm_" + encodeURIComponent(k.replace(/ /g, '_'));
 
       if(farm){
         detail = `<b>おすすめ周回</b><br>`;
@@ -1097,13 +1094,10 @@ function calc(name){
 // =====================================================
 function toggleFarm(id){
   const el = document.getElementById(id);
-  if(el.style.display === "block"){
-    el.style.display = "none";
-  }else{
-    el.style.display = "block";
+  if (el) {
+    el.style.display = el.style.display === "block" ? "none" : "block";
   }
 }
-
 window.onclick = e=>{
   if(e.target.id==="modal"){
     document.getElementById("modal").style.display="none";
